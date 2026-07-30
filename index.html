@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Lab â€” Learn Python with Interactive Labs</title>
+  <meta name="description" content="A free interactive environment for learning Python from absolute basics through writing functions. Guided tutorials and hands-on labs that run entirely in your browser.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>ðŸ</text></svg>">
+
+  <!-- CodeMirror (code editor) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchbrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+
+  <!-- Pyodide (Python in the browser) -->
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+<script>(function(){var h=location.hostname;if(h!=="ez-exams.github.io"&&h!=="localhost"&&h!=="127.0.0.1"){document.documentElement.setAttribute("data-ez-standalone","")}})();</script>
+<style>
+.ez-nav-home{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;gap:7px;
+  text-decoration:none;font:500 13px/1 system-ui,-apple-system,"Segoe UI",sans-serif;color:#b2b6ca;
+  background:rgba(22,24,38,.92);border:1px solid rgba(233,233,237,.16);border-radius:8px;padding:7px 12px;
+  backdrop-filter:blur(8px)}
+.ez-nav-home:hover{color:#9184d9;border-color:#9184d9}
+[data-ez-standalone] .ez-nav-home{display:none!important}
+@media (max-width:720px){.ez-nav-home{position:static;margin:8px}}
+</style>
+</head>
+<body><a class="ez-nav-home" href="https://ez-exams.github.io/">&#8962; EZ Exam</a>
+  <div id="app">
+    <!-- Top bar -->
+    <header id="topbar">
+      <button id="nav-toggle" title="Toggle menu" aria-label="Toggle menu">â˜°</button>
+      <div class="brand">
+        <span class="brand-logo">ðŸ</span>
+        <span class="brand-name">Python&nbsp;Lab</span>
+      </div>
+      <div id="py-status" class="py-status loading">
+        <span class="dot"></span><span id="py-status-text">Loading Pythonâ€¦</span>
+      </div>
+      <div class="top-progress">
+        <div class="top-progress-label"><span id="progress-count">0</span> / <span id="progress-total">0</span> complete</div>
+        <div class="top-progress-track"><div id="progress-fill" class="top-progress-fill"></div></div>
+      </div>
+    </header>
+
+    <!-- Sidebar navigation -->
+    <nav id="sidebar">
+      <div class="sidebar-intro">
+        <p>Work through the modules in order. <strong>Tutorials</strong> teach, <strong>labs</strong> make you write real code â€” checked automatically, right in your browser.</p>
+      </div>
+      <div id="module-list"></div>
+      <div class="sidebar-footer">
+        <button id="reset-progress" class="linklike">Reset my progress</button>
+      </div>
+    </nav>
+    <div id="sidebar-backdrop"></div>
+
+    <!-- Main content -->
+    <main id="main">
+      <div id="lesson-container"></div>
+      <div id="lesson-nav">
+        <button id="prev-btn" class="btn ghost">â† Previous</button>
+        <button id="next-btn" class="btn primary">Next â†’</button>
+      </div>
+      <footer id="site-footer">
+        <p>Python Lab Â· runs 100% in your browser with <a href="https://pyodide.org" target="_blank" rel="noopener">Pyodide</a> Â· no account, no server, your progress is saved on this device.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="lessons.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
